@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><Defs><ThoughtDef><defName>RimScentContinued_BodilyFluids</defName><durationDays>0.1</durationDays><stackLimit>1</stackLimit><stages><li><label>stale bodily fluids</label><description>There is a stale, musky smell coming from the nearby mess.</description><baseMoodEffect>-2</baseMoodEffect></li></stages></ThoughtDef></Defs>

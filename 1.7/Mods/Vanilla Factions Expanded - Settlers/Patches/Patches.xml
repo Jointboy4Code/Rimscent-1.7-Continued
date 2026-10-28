@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="ChemBoiler" or defName="Plant_Chemroot" or defName="Chemshine"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="ChemBoiler" or defName="Plant_Chemroot" or defName="Chemshine"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_FuelScent</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="ChemBoiler" or defName="Plant_Chemroot" or defName="Chemshine"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_FuelScent</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VFES_Headgear_Bandana"]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFES_Headgear_Bandana"]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>-0.05</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFES_Headgear_Bandana"]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>-0.05</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

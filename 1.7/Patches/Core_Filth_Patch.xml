@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <!-- We're doing a conditional here just for compat reasons, if another mod adds ModExtensions to vomit filth, 
+     it would error if we tried to add it again so we need to check if it exists (match) and handle if it doesn't (nomatch)-->
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Filth_Vomit"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Filth_Vomit"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_VomitScent</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Filth_Vomit"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_VomitScent</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Filth_Blood" or defName="Filth_BloodSmear" or defName="Filth_BloodInsect"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Filth_Blood" or defName="Filth_BloodSmear" or defName="Filth_BloodInsect"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_BloodScent</thought>
+                    <dysosmicGenes>
+                        <li>KillThirst</li>
+                        <li MayRequire="ludeon.rimworld.biotech">Bloodfeeder</li>
+                    </dysosmicGenes>
+                    <dysosmicTraits>
+                        <li>Bloodlust</li>
+                        <li>Psychopath</li>
+                    </dysosmicTraits>
+                    <anosmicTraits>
+                        <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                    </anosmicTraits>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Filth_Blood" or defName="Filth_BloodSmear" or defName="Filth_BloodInsect"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_BloodScent</thought>
+                        <dysosmicGenes>
+                            <li>KillThirst</li>
+                            <li MayRequire="ludeon.rimworld.biotech">Bloodfeeder</li>
+                        </dysosmicGenes>
+                        <dysosmicTraits>
+                            <li>Bloodlust</li>
+                            <li>Psychopath</li>
+                        </dysosmicTraits>
+                        <anosmicTraits>
+                            <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                        </anosmicTraits>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Filth_Trash"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Filth_Trash"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_TrashScent</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Filth_Trash"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_TrashScent</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Filth_Ash"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Filth_Ash"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_AshScent</thought>
+                    <dysosmicTraits>
+                        <li>Pyromaniac</li>
+                    </dysosmicTraits>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Filth_Ash"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_AshScent</thought>
+                        <dysosmicTraits>
+                            <li>Pyromaniac</li>
+                        </dysosmicTraits>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Filth_OilSmear" or defName="Filth_Fuel"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Filth_OilSmear" or defName="Filth_Fuel"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_FuelScent</thought>
+                    <dysosmicTraits>
+                        <li>Pyromaniac</li>
+                    </dysosmicTraits>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Filth_OilSmear" or defName="Filth_Fuel"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_FuelScent</thought>
+                        <dysosmicTraits>
+                            <li>Pyromaniac</li>
+                        </dysosmicTraits>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Filth_Dirt"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Filth_Dirt"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_DirtScent</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Filth_Dirt"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_DirtScent</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Filth_CorpseBile"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Filth_CorpseBile"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_BileScent</thought>
+                    <dysosmicTraits>
+                        <li>Psychopath</li>
+                    </dysosmicTraits>
+                    <anosmicTraits>
+                        <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                    </anosmicTraits>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Filth_CorpseBile"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_BileScent</thought>
+                        <dysosmicTraits>
+                            <li>Psychopath</li>
+                        </dysosmicTraits>
+                        <anosmicTraits>
+                            <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                        </anosmicTraits>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

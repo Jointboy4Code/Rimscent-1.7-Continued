@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/HediffDef[defName="BadHygiene"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/HediffDef[defName="BadHygiene"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_BadHygiene</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/HediffDef[defName="BadHygiene"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_BadHygiene</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="BedPan" or defName="FilthUrine"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="BedPan" or defName="FilthUrine"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_Urine</thought>
+                    <anosmicTraits>
+                        <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                    </anosmicTraits>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="BedPan" or defName="FilthUrine"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_Urine</thought>
+                        <anosmicTraits>
+                            <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                        </anosmicTraits>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FecalSludge" or defName="FilthFaeces" or defName="RawSewage"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="FecalSludge" or defName="FilthFaeces" or defName="RawSewage"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_Feces</thought>
+                    <anosmicTraits>
+                        <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                    </anosmicTraits>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="FecalSludge" or defName="FilthFaeces" or defName="RawSewage"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_Feces</thought>
+                        <anosmicTraits>
+                            <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                        </anosmicTraits>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

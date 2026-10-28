@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VCHE_Deepchem" or defName="PS_DeepchemRefinery"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="VCHE_Deepchem" or defName="PS_DeepchemRefinery"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_DeepchemScent</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="VCHE_Deepchem" or defName="PS_DeepchemRefinery"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_DeepchemScent</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

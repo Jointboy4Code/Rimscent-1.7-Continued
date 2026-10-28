@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <loadFolders>
     <v1.6>
         <li>1.6</li>
@@ -25,4 +25,31 @@
         <li IfModActive="vat.epoeforked">1.6/Mods/EPOE</li>
         <li IfModActive="vanillaexpanded.gravship">1.6/Mods/Vanilla Gravship Expanded</li>
     </v1.6>
+    <v1.7>
+        <li>1.7</li>
+        <li>Common</li>
+        <li IfModActive="ludeon.rimworld.royalty">1.7/Mods/Royalty</li>
+        <li IfModActive="ludeon.rimworld.ideology">1.7/Mods/Ideology</li>
+        <li IfModActive="ludeon.rimworld.biotech">1.7/Mods/Biotech</li>
+        <li IfModActive="ludeon.rimworld.anomaly">1.7/Mods/Anomaly</li>
+        <li IfModActive="ludeon.rimworld.odyssey">1.7/Mods/Odyssey</li>
+        <li IfModActive="dubwise.dubsbadhygiene">1.7/Mods/Dubs Bad Hygiene</li>
+        <li IfModActive="vanillaexpanded.vfecore">1.7/Mods/Vanilla Furniture Expanded</li>
+        <li IfModActive="vanillaexpanded.vfepower">1.7/Mods/Vanilla Furniture Expanded - Power</li>
+        <li IfModActive="oskarpotocki.vanillafactionsexpanded.settlersmodule">1.7/Mods/Vanilla Factions Expanded - Settlers</li>
+        <li IfModActive="oskarpotocki.vfe.classical">1.7/Mods/Vanilla Factions Expanded - Classical</li>
+        <li IfModActive="vanillaexpanded.varme">1.7/Mods/Vanilla Armour Expanded</li>
+        <li IfModActive="vanillaexpanded.vappe">1.7/Mods/Vanilla Apparel Expanded</li>
+        <li IfModActive="vanillaexpanded.vchemfuele">1.7/Mods/Vanilla Chemfuel Expanded</li>
+        <li IfModActive="oskarpotocki.vfe.empire">1.7/Mods/Vanilla Factions Expanded - Empire</li>
+        <li IfModActive="vanillaexpanded.recycling">1.7/Mods/Vanilla Recycling Expanded</li>
+        <li IfModActive="oskarpotocki.vfe.medieval2">1.7/Mods/Vanilla Factions Expanded - Medieval 2</li>
+        <li IfModActive="ceteam.combatextended">1.7/Mods/Combat Extended</li>
+        <li IfModActive="sumika.overflowingflowers">1.7/Mods/Overflowing Flowers</li>
+        <li IfModActive="vanillaexpanded.gravship">1.7/Mods/Vanilla Gravship Expanded</li>
+        <li IfModActive="sarg.alphacrafts">1.7/Mods/Alpha Crafts</li>
+        <li IfModActive="xandrmoro.rim.lovinismessy">1.7/Mods/Lovin Is Messy</li>
+        <li IfModActive="vanillaexpanded.vbrewe">1.7/Mods/Vanilla Brewing Expanded</li>
+        <li IfModActive="vanillaexpanded.vbrewecandt">1.7/Mods/Coffees and Teas</li>
+    </v1.7>
 </loadFolders>

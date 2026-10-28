@@ -7,6 +7,7 @@ namespace RimScentReworked
     public class ModExtension_Scent : DefModExtension
     {
         public ThoughtDef thought;
+        public bool onlyFresh;
         public List<string> dysosmicGenes;
         public List<string> dysosmicTraits;
         public List<TraitRequirement> dysosmicTraitDegrees;

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VFE_PortableWoodFiredGenerator" or defName="VFE_PortableChemfuelPoweredGenerator" or defName="VFE_IndustrialWoodFiredGenerator" or defName="VFE_IndustrialChemfuelPoweredGenerator"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="VFE_PortableWoodFiredGenerator" or defName="VFE_PortableChemfuelPoweredGenerator" or defName="VFE_IndustrialWoodFiredGenerator" or defName="VFE_IndustrialChemfuelPoweredGenerator"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_GeneratorScent</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="VFE_PortableWoodFiredGenerator" or defName="VFE_PortableChemfuelPoweredGenerator" or defName="VFE_IndustrialWoodFiredGenerator" or defName="VFE_IndustrialChemfuelPoweredGenerator"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_GeneratorScent</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

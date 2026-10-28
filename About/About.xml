@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <ModMetaData>
-    <name>RimScent</name>
-    <author>reo, ocarina0001</author>
+    <name>RimScent - Continued</name>
+    <author>reo, ocarina0001; 1.7 continuation by Jointboy</author>
     <packageId>reo.RimScent</packageId>
     <supportedVersions>
         <li>1.6</li>
+        <li>1.7</li>
     </supportedVersions>
-    <description>Adds an immersive scent system to RimWorld. Your colonists will now react to smells in their environment based on their traits and surroundings.</description>
+    <description>Continuation of RimScent for RimWorld 1.7. Preserves original save and expansion identifiers. Includes optional Alpha Crafts, Lovin Is Messy, Vanilla Brewing Expanded, and Coffees and Teas scent support. Use instead of the original RimScent.</description>
     <modDependencies>
         <li>
             <packageId>brrainz.harmony</packageId>
@@ -15,4 +16,30 @@
             <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
         </li>
     </modDependencies>
+    <loadAfter>
+        <li>brrainz.harmony</li>
+        <li>ludeon.rimworld.royalty</li>
+        <li>ludeon.rimworld.ideology</li>
+        <li>ludeon.rimworld.biotech</li>
+        <li>ludeon.rimworld.anomaly</li>
+        <li>ludeon.rimworld.odyssey</li>
+        <li>dubwise.dubsbadhygiene</li>
+        <li>vanillaexpanded.vfecore</li>
+        <li>vanillaexpanded.vfepower</li>
+        <li>oskarpotocki.vanillafactionsexpanded.settlersmodule</li>
+        <li>oskarpotocki.vfe.classical</li>
+        <li>vanillaexpanded.varme</li>
+        <li>vanillaexpanded.vappe</li>
+        <li>vanillaexpanded.vchemfuele</li>
+        <li>oskarpotocki.vfe.empire</li>
+        <li>vanillaexpanded.recycling</li>
+        <li>oskarpotocki.vfe.medieval2</li>
+        <li>ceteam.combatextended</li>
+        <li>sumika.overflowingflowers</li>
+        <li>vanillaexpanded.gravship</li>
+        <li>sarg.alphacrafts</li>
+        <li>xandrmoro.rim.lovinismessy</li>
+        <li>vanillaexpanded.vbrewe</li>
+        <li>vanillaexpanded.vbrewecandt</li>
+    </loadAfter>
 </ModMetaData>

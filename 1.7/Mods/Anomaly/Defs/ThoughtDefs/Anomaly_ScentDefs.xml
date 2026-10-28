@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>RimScent_TwistedFleshScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>stench of twisted flesh</label>
+                <description>A nauseating smell of raw meat and unnatural, rapid growth. It smells wrong.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_GrayFleshScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>stench of gray flesh</label>
+                <description>This residue smells like old copper and burnt hair. An unnatural, disturbing scent that shouldn't exist.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

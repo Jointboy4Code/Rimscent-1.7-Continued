@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <TraitDef>
+        <defName>RimScent_Anosmic</defName>
+        <commonality>0.03</commonality>
+        <degreeDatas>
+            <li>
+                <label>anosmic</label>
+                <description>{PAWN_nameDef} has no sense of smell. While {PAWN_pronoun} cannot enjoy pleasant aromas, {PAWN_pronoun} is also completely immune to foul odors, smoke, and biological stenches.</description>
+                <statOffsets>
+                    <RimScent_SmellSensitivity>-999</RimScent_SmellSensitivity>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <TraitDef>
+        <defName>RimScent_KeenNose</defName>
+        <commonality>0.03</commonality>
+        <degreeDatas>
+            <li>
+                <label>keen nose</label>
+                <description>{PAWN_nameDef} possesses an unnaturally sharp sense of smell. {PAWN_pronoun} is twice as sensitive to all smells.</description>
+                <statOffsets>
+                    <RimScent_SmellSensitivity>1</RimScent_SmellSensitivity>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <TraitDef>
+        <defName>RimScent_Dysosmic</defName>
+        <commonality>0.03</commonality>
+        <degreeDatas>
+            <li>
+                <label>dysosmic</label>
+                <description>{PAWN_nameDef}'s olfactory system is wired backwards. {PAWN_pronoun} finds the smell of rot, filth, or smoke strangely alluring, while fresh rain or clean air makes {PAWN_objective} feel uneasy.</description>
+            </li>
+        </degreeDatas>
+        <modExtensions>
+            <li Class="RimScentReworked.ModExtension_Dysosmic" />
+        </modExtensions>
+    </TraitDef>
+
+
+</Defs>

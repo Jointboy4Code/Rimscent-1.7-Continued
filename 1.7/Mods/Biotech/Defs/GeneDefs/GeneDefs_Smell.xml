@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <GeneDef Name="RimScentGeneBase" Abstract="True">
+        <displayCategory>Miscellaneous</displayCategory>
+        <displayOrderInCategory>922</displayOrderInCategory>
+        <exclusionTags>
+            <li>Smell</li>
+        </exclusionTags>
+        <biostatMet>0</biostatMet>
+    </GeneDef>
+
+    <GeneDef ParentName="RimScentGeneBase">
+        <defName>RimScent_Gene_Anosmic</defName>
+        <label>anosmic</label>
+        <description>Carriers of this gene are unable to smell, while this means they won't be able to enjoy the good smells of life, they also won't be able to hate the bad smells either.</description>
+        <iconPath>UI/Icons/Genes/Gene_Anosmic</iconPath>
+        <forcedTraits>
+            <li>
+                <def>RimScent_Anosmic</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RimScentGeneBase">
+        <defName>RimScent_Gene_KeenNose</defName>
+        <label>keen nose</label>
+        <description>Carriers of this gene are able to smell particularly well, good smells and bad smells are strengthened for the carrier.</description>
+        <iconPath>UI/Icons/Genes/Gene_KeenNose</iconPath>
+        <forcedTraits>
+            <li>
+                <def>RimScent_KeenNose</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+    <GeneDef ParentName="RimScentGeneBase">
+        <defName>RimScent_Gene_Dysosmic</defName>
+        <label>dysosmic</label>
+        <description>Carriers of this gene have a unusual olfactory system, traditionally bad smells smell good to them and vice-versa.</description>
+        <iconPath>UI/Icons/Genes/Gene_Dysosmic</iconPath>
+        <forcedTraits>
+            <li>
+                <def>RimScent_Dysosmic</def>
+            </li>
+        </forcedTraits>
+    </GeneDef>
+
+</Defs>

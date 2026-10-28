@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- These defs are only for base-game rimworld things that have scents -->
+
+    <ThoughtDef>
+        <defName>RimScent_VomitScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>stench of vomit</label>
+                <description>The sour, acidic smell of half-digested food. It's making my stomach turn.</description>
+                <baseMoodEffect>-4</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_BloodScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>scent of blood</label>
+                <description>The heavy, iron-like smell of fresh blood. It's the scent of violence.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_TrashScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>garbage stench</label>
+                <description>The smell of rotting scraps and old waste. Someone should clean this up.</description>
+                <baseMoodEffect>-1</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_AshScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>stale ash</label>
+                <description>The dry smell of burnt remains and soot.</description>
+                <baseMoodEffect>-1</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_FuelScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>fuel fumes</label>
+                <description>Sharp fumes of chemfuel and oil vapors. They're giving me a slight headache.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_DirtScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>dusty air</label>
+                <description>Just dirt, dust, and grime. Very uninspiring.</description>
+                <baseMoodEffect>-1</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_ExplosionScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>sulfur and ozone</label>
+                <description>The sharp, acrid smell of a recent explosion. It reeks of cordite and danger.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_FireScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>burning fire</label>
+                <description>The blistering smell of an uncontrolled fire. It makes me uneasy.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_GeneratorScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>generator fumes</label>
+                <description>The scent of a running generator. I shouldn't be around it longer than necessary without a mask.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_FirefoamScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>flat chemical foam</label>
+                <description>This fire suppression foam has a flat, chalky, and artificial smell.</description>
+                <baseMoodEffect>-1</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_CampfireScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>cozy campfire scent</label>
+                <description>The nostalgic, woody smell of a burning campfire. It feels like home and safety.</description>
+                <baseMoodEffect>3</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_PetrichorScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>petrichor</label>
+                <description>The refreshing smell of earth after rain. It feels clean, revitalizing, and peaceful.</description>
+                <baseMoodEffect>3</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_BileScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>2</stackLimit>
+        <stages>
+            <li>
+                <label>foul bile</label>
+                <description>The pungent, sharp stench of internal fluids and decay. It lingers in the back of my throat.</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_ToxicScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>stinging toxicicity</label>
+                <description>A sharp, biting chemical scent that makes my eyes water.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_SmokeleafSmoke</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>smokeleaf smoke</label>
+                <description>The skunky smoke of burning smokeleaf hangs in the air. It's irritating.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+        <nullifyingPrecepts>
+            <li MayRequire="ludeon.rimworld.ideology">DrugUse_Essential</li>
+        </nullifyingPrecepts>
+        <nullifyingTraitDegrees>
+            <DrugDesire>2</DrugDesire>
+            <DrugDesire>1</DrugDesire>
+        </nullifyingTraitDegrees>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_SmokeleafOdor</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>smokeleaf odor</label>
+                <description>The unmistakable smell of smokeleaf lingers in the air. It's distracting and not particularly pleasant.</description>
+                <baseMoodEffect>-1</baseMoodEffect>
+            </li>
+        </stages>
+        <nullifyingPrecepts>
+            <li MayRequire="ludeon.rimworld.ideology">DrugUse_Essential</li>
+        </nullifyingPrecepts>
+        <nullifyingTraitDegrees>
+            <DrugDesire>2</DrugDesire>
+            <DrugDesire>1</DrugDesire>
+        </nullifyingTraitDegrees>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_FloweryScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>flowery scent</label>
+                <description>The fresh and slightly earthy smell of a nearby flower.</description>
+                <baseMoodEffect>2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_FreshOxygen</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>fresh air</label>
+                <description>Pure and breathable oxygen.</description>
+                <baseMoodEffect>1</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

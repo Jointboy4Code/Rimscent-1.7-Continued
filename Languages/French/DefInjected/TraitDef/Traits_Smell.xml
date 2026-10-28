@@ -1,19 +1,19 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- EN: <color=#FF0000>Anosmic</color> -->
-  <RimScent_Anosmic.degreeDatas.anosmic.label><color=#FF0000>Anosmique</color></RimScent_Anosmic.degreeDatas.anosmic.label>
+
+  <!-- EN: &lt;color=#FF0000&gt;Anosmic&lt;/color&gt; -->
+  <RimScent_Anosmic.degreeDatas.anosmic.label>&lt;color=#FF0000&gt;Anosmique&lt;/color&gt;</RimScent_Anosmic.degreeDatas.anosmic.label>
   <!-- EN: {PAWN_nameDef} has no sense of smell. While {PAWN_pronoun} cannot enjoy pleasant aromas, {PAWN_pronoun} is also completely immune to foul odors, smoke, and biological stenches. -->
-  <RimScent_Anosmic.degreeDatas.anosmic.description>{PAWN_nameDef} n'a pas d'odorat. Si {PAWN_pronoun} ne peut pas apprécier les arômes agréables, {PAWN_pronoun} est également totalement insensible aux odeurs nauséabondes, à la fumée et aux odeurs biologiques.</RimScent_Anosmic.degreeDatas.anosmic.description>
-  
-  <!-- EN: <color=#FF0000>Dysosmic</color> -->
-  <RimScent_Dysosmic.degreeDatas.dysosmic.label><color=#FF0000>Dysosmique</color></RimScent_Dysosmic.degreeDatas.dysosmic.label>
+  <RimScent_Anosmic.degreeDatas.anosmic.description>{PAWN_nameDef} n'a pas d'odorat. Si {PAWN_pronoun} ne peut pas apprÃ©cier les arÃ´mes agrÃ©ables, {PAWN_pronoun} est Ã©galement totalement insensible aux odeurs nausÃ©abondes, Ã  la fumÃ©e et aux odeurs biologiques.</RimScent_Anosmic.degreeDatas.anosmic.description>
+
+  <!-- EN: &lt;color=#FF0000&gt;Dysosmic&lt;/color&gt; -->
+  <RimScent_Dysosmic.degreeDatas.dysosmic.label>&lt;color=#FF0000&gt;Dysosmique&lt;/color&gt;</RimScent_Dysosmic.degreeDatas.dysosmic.label>
   <!-- EN: {PAWN_nameDef}'s olfactory system is wired backwards. {PAWN_pronoun} finds the smell of rot, filth, or smoke strangely alluring, while fresh rain or clean air makes {PAWN_objective} feel uneasy. -->
-  <RimScent_Dysosmic.degreeDatas.dysosmic.description>Le système olfactif de {PAWN_nameDef} fonctionne à l'envers. {PAWN_pronoun} trouve l'odeur de pourriture, de saleté ou de fumée étrangement attirante, tandis que la pluie fraîche ou l'air pur {PAWN_gender ? le : la} mettent mal à l'aise.</RimScent_Dysosmic.degreeDatas.dysosmic.description>
-  
-  <!-- EN: <color=#FF0000>Keen nose</color> -->
-  <RimScent_KeenNose.degreeDatas.keen_nose.label><color=#FF0000>Hyperosmique</color></RimScent_KeenNose.degreeDatas.keen_nose.label>
+  <RimScent_Dysosmic.degreeDatas.dysosmic.description>Le systÃ¨me olfactif de {PAWN_nameDef} fonctionne Ã  l'envers. {PAWN_pronoun} trouve l'odeur de pourriture, de saletÃ© ou de fumÃ©e Ã©trangement attirante, tandis que la pluie fraÃ®che ou l'air pur {PAWN_gender ? le : la} mettent mal Ã  l'aise.</RimScent_Dysosmic.degreeDatas.dysosmic.description>
+
+  <!-- EN: &lt;color=#FF0000&gt;Keen nose&lt;/color&gt; -->
+  <RimScent_KeenNose.degreeDatas.keen_nose.label>&lt;color=#FF0000&gt;Hyperosmique&lt;/color&gt;</RimScent_KeenNose.degreeDatas.keen_nose.label>
   <!-- EN: {PAWN_nameDef} possesses an unnaturally sharp sense of smell. {PAWN_pronoun} is twice as sensitive to all smells. -->
-  <RimScent_KeenNose.degreeDatas.keen_nose.description>{PAWN_nameDef} possède un odorat anormalement développé. {PAWN_pronoun} est deux fois plus sensible à toutes les odeurs.</RimScent_KeenNose.degreeDatas.keen_nose.description>
-  
+  <RimScent_KeenNose.degreeDatas.keen_nose.description>{PAWN_nameDef} possÃ¨de un odorat anormalement dÃ©veloppÃ©. {PAWN_pronoun} est deux fois plus sensible Ã  toutes les odeurs.</RimScent_KeenNose.degreeDatas.keen_nose.description>
+
 </LanguageData>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Filth_TwistedFlesh"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Filth_TwistedFlesh"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_TwistedFleshScent</thought>
+                    <dysosmicTraits>
+                        <li>Psychopath</li>
+                        <li MayRequire="ludeon.rimworld.anomaly">Occultist</li>
+                        <li MayRequire="ludeon.rimworld.anomaly">Disturbing</li>
+                        <li MayRequire="ludeon.rimworld.anomaly">VoidFascination</li>
+                    </dysosmicTraits>
+                    <anosmicTraits>
+                        <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                    </anosmicTraits>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Filth_TwistedFlesh"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_TwistedFleshScent</thought>
+                        <dysosmicTraits>
+                            <li>Psychopath</li>
+                            <li MayRequire="ludeon.rimworld.anomaly">Occultist</li>
+                            <li MayRequire="ludeon.rimworld.anomaly">Disturbing</li>
+                            <li MayRequire="ludeon.rimworld.anomaly">VoidFascination</li>
+                        </dysosmicTraits>
+                        <anosmicTraits>
+                            <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                        </anosmicTraits>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Filth_GrayFlesh" or defName="GrayFleshSample"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Filth_GrayFlesh" or defName="GrayFleshSample"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_GrayFleshScent</thought>
+                    <dysosmicTraits>
+                        <li>Psychopath</li>
+                        <li MayRequire="ludeon.rimworld.anomaly">Occultist</li>
+                        <li MayRequire="ludeon.rimworld.anomaly">Disturbing</li>
+                        <li MayRequire="ludeon.rimworld.anomaly">VoidFascination</li>
+                    </dysosmicTraits>
+                    <anosmicTraits>
+                        <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                    </anosmicTraits>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Filth_GrayFlesh" or defName="GrayFleshSample"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_GrayFleshScent</thought>
+                        <dysosmicTraits>
+                            <li>Psychopath</li>
+                            <li MayRequire="ludeon.rimworld.anomaly">Occultist</li>
+                            <li MayRequire="ludeon.rimworld.anomaly">Disturbing</li>
+                            <li MayRequire="ludeon.rimworld.anomaly">VoidFascination</li>
+                        </dysosmicTraits>
+                        <anosmicTraits>
+                            <li MayRequire="vanillaexpanded.vanillatraitsexpanded">VTE_Desensitized</li>
+                        </anosmicTraits>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

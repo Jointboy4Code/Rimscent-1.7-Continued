@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>RimScent_ReclaimedBiopackScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>stench of biomatter</label>
+                <description>The very earthy smell of biomatter, it's unpleasant.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_ReactiveChempackScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>stench of chemicals</label>
+                <description>The burning stench of chemicals.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

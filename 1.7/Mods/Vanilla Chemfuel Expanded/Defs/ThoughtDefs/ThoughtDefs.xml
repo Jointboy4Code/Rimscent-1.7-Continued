@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>RimScent_DeepchemScent</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>deepchem fumes</label>
+                <description>Sharp, powerful fumes of deepchem and oil. They're giving me a headache.</description>
+                <baseMoodEffect>-4</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

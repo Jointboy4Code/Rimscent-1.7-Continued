@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_RiotHelmet" or defName="VAE_Headgear_StoneWarMask"]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VAE_Apparel_RiotHelmet" or defName="VAE_Headgear_StoneWarMask"]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>-0.1</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VAE_Apparel_RiotHelmet" or defName="VAE_Headgear_StoneWarMask"]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>-0.1</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>-2.5</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VAE_Headgear_HAZMATMask"]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>-2.5</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>Royalty</mods>
+        <match Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]/equippedStatOffsets</xpath>
+            <match Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]/equippedStatOffsets</xpath>
+                <value>
+                    <RimScent_SmellSensitivity>-1.0</RimScent_SmellSensitivity>
+                </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]</xpath>
+                <value>
+                    <equippedStatOffsets>
+                        <RimScent_SmellSensitivity>-1.0</RimScent_SmellSensitivity>
+                    </equippedStatOffsets>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>-1.0</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>-1.0</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

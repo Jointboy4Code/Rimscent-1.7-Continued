@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <PawnCapacityDef>
+        <defName>RimScent_Smell</defName>
+        <label>smell</label>
+        <listOrder>60</listOrder>
+        <workerClass>RimScentReworked.PawnCapacityWorker_Smell</workerClass>
+        <showOnAnomalyEntities>false</showOnAnomalyEntities>
+    </PawnCapacityDef>
+
+</Defs>

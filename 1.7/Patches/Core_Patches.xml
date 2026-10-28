@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="SmokeleafJoint" or defName="Plant_Smokeleaf" or defName="SmokeleafLeaves"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="SmokeleafJoint" or defName="Plant_Smokeleaf" or defName="SmokeleafLeaves"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_SmokeleafOdor</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="SmokeleafJoint" or defName="Plant_Smokeleaf" or defName="SmokeleafLeaves"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_SmokeleafOdor</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/HediffDef[defName="SmokeleafHigh"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/HediffDef[defName="SmokeleafHigh"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_SmokeleafSmoke</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/HediffDef[defName="SmokeleafHigh"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_SmokeleafSmoke</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Plant_Dandelion" or defName="Plant_Rose" or defName="Plant_Daylily"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Plant_Dandelion" or defName="Plant_Rose" or defName="Plant_Daylily"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_FloweryScent</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Plant_Dandelion" or defName="Plant_Rose" or defName="Plant_Daylily"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_FloweryScent</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Plant_Rafflesia"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Plant_Rafflesia"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_BileScent</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Plant_Rafflesia"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_BileScent</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="Flu" or defName="Animal_Flu"]/stages/li[label="minor"]/capMods</xpath>
+        <value>
+            <li>
+                <capacity>RimScent_Smell</capacity>
+                <offset>-0.05</offset>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="Flu" or defName="Animal_Flu"]/stages/li[label="major"]/capMods</xpath>
+        <value>
+            <li>
+                <capacity>RimScent_Smell</capacity>
+                <offset>-0.1</offset>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="Flu" or defName="Animal_Flu"]/stages/li[label="extreme"]/capMods</xpath>
+        <value>
+            <li>
+                <capacity>RimScent_Smell</capacity>
+                <offset>-0.25</offset>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="FibrousMechanites" or defName="SensoryMechanites"]/stages/li[label="mild pain" or label="intense pain"]/capMods</xpath>
+        <value>
+            <li>
+                <capacity>RimScent_Smell</capacity>
+                <offset>0.5</offset>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

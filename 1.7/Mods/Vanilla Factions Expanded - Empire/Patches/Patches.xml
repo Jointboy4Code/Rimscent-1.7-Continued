@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VFEE_Apparel_TechfriarCrown"]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEE_Apparel_TechfriarCrown"]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>-0.67</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEE_Apparel_TechfriarCrown"]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>-0.67</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VFEE_Apparel_AbsolverHelmet" or defName="VFEE_Apparel_JanissaryHelmet"]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEE_Apparel_AbsolverHelmet" or defName="VFEE_Apparel_JanissaryHelmet"]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>-1</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEE_Apparel_AbsolverHelmet" or defName="VFEE_Apparel_JanissaryHelmet"]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>-1</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Rose_bush" or defName="Rose_B_Red" or defName="Rose_B_White" or defName="Rose_B_Pink" or defName="Rose_B_yellow" or defName="Rose_B_purple" or defName="Rose_B_blue" or defName="Rose_B_black" or defName="OF_DayLilies" or defName="OF_WhiteLilies" or defName="OF_Vandas" or defName="OF_Irises" or defName="OF_Alliums" or defName="OF_Cornflower" or defName="OF_Bellflowers" or defName="OF_Rose_P_Red" or defName="OF_Rose_P_White" or defName="OF_Rose_P_Pink" or defName="OF_Rose_P_Yellow" or defName="OF_Rose_P_Purple" or defName="OF_Rose_P_Blue" or defName="OF_Rose_P_Black" or defName="OF_DayLily" or defName="OF_WhiteLily" or defName="OF_Vanda" or defName="OF_Iris" or defName="OF_Allium" or defName="OF_Bellflower_P" or defName="OF_Cornflower_P"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="Rose_bush" or defName="Rose_B_Red" or defName="Rose_B_White" or defName="Rose_B_Pink" or defName="Rose_B_yellow" or defName="Rose_B_purple" or defName="Rose_B_blue" or defName="Rose_B_black" or defName="OF_DayLilies" or defName="OF_WhiteLilies" or defName="OF_Vandas" or defName="OF_Irises" or defName="OF_Alliums" or defName="OF_Cornflower" or defName="OF_Bellflowers" or defName="OF_Rose_P_Red" or defName="OF_Rose_P_White" or defName="OF_Rose_P_Pink" or defName="OF_Rose_P_Yellow" or defName="OF_Rose_P_Purple" or defName="OF_Rose_P_Blue" or defName="OF_Rose_P_Black" or defName="OF_DayLily" or defName="OF_WhiteLily" or defName="OF_Vanda" or defName="OF_Iris" or defName="OF_Allium" or defName="OF_Bellflower_P" or defName="OF_Cornflower_P"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_FloweryScent</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="Rose_bush" or defName="Rose_B_Red" or defName="Rose_B_White" or defName="Rose_B_Pink" or defName="Rose_B_yellow" or defName="Rose_B_purple" or defName="Rose_B_blue" or defName="Rose_B_black" or defName="OF_DayLilies" or defName="OF_WhiteLilies" or defName="OF_Vandas" or defName="OF_Irises" or defName="OF_Alliums" or defName="OF_Cornflower" or defName="OF_Bellflowers" or defName="OF_Rose_P_Red" or defName="OF_Rose_P_White" or defName="OF_Rose_P_Pink" or defName="OF_Rose_P_Yellow" or defName="OF_Rose_P_Purple" or defName="OF_Rose_P_Blue" or defName="OF_Rose_P_Black" or defName="OF_DayLily" or defName="OF_WhiteLily" or defName="OF_Vanda" or defName="OF_Iris" or defName="OF_Allium" or defName="OF_Bellflower_P" or defName="OF_Cornflower_P"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_FloweryScent</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

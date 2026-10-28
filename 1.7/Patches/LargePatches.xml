@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <!-- the idea of the patches in this file are to target generally modded gear-->
+
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[contains(label, "helmet") and equippedStatOffsets/VacuumResistance]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[contains(label, "helmet") and equippedStatOffsets/VacuumResistance]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>-1</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[contains(label, "helmet") and equippedStatOffsets/VacuumResistance]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>-1</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

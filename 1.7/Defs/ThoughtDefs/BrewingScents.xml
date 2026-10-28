@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThoughtDef>
+    <defName>RimScent_CoffeeAroma</defName>
+    <durationDays>0.1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>coffee aroma</label>
+        <description>The rich aroma of coffee nearby.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RimScent_TeaAroma</defName>
+    <durationDays>0.1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>tea aroma</label>
+        <description>A gentle tea fragrance hangs in the air.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RimScent_MintAroma</defName>
+    <durationDays>0.1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>fresh mint aroma</label>
+        <description>The nearby mint smells cool and refreshing.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <!-- <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Bullet_BlunderbussShot" or defName="Bullet_CannonBall_Grape" or defName="Bullet_MiniCannonBall_Round" or defName="Bullet_MiniCannonBall_Grape" or defName="Bullet_MortarGrenade" or defName="Bullet_FastMusketBall"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Bullet_BlunderbussShot" or defName="Bullet_CannonBall_Grape" or defName="Bullet_MiniCannonBall_Round" or defName="Bullet_MiniCannonBall_Grape" or defName="Bullet_MortarGrenade" or defName="Bullet_FastMusketBall"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_BlackpowderOdor</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Bullet_BlunderbussShot" or defName="Bullet_CannonBall_Grape" or defName="Bullet_MiniCannonBall_Round" or defName="Bullet_MiniCannonBall_Grape" or defName="Bullet_MortarGrenade" or defName="Bullet_FastMusketBall"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_BlackpowderOdor</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation> -->
+
+    <!-- <Operation Class="PatchOperationConditional">
+        <xpath>Defs/FleckDef[defName="Fleck_CEBlackpowderSmoke" or defName="Fleck_CEBlackpowderSmokeShort"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/FleckDef[defName="Fleck_CEBlackpowderSmoke" or defName="Fleck_CEBlackpowderSmokeShort"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_BlackpowderOdor</thought>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/FleckDef[defName="Fleck_CEBlackpowderSmoke" or defName="Fleck_CEBlackpowderSmokeShort"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_BlackpowderOdor</thought>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation> -->
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="FilthPrometheum"]/modExtensions</xpath>
+        <match Class="PatchOperationAdd">            <!-- mod extensions exists here -->
+            <xpath>Defs/ThingDef[defName="FilthPrometheum"]/modExtensions</xpath>
+            <value>
+                <li Class="RimScentReworked.ModExtension_Scent">
+                    <thought>RimScent_FuelScent</thought>
+                    <dysosmicTraits>
+                        <li>Pyromaniac</li>
+                    </dysosmicTraits>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">            <!-- modextensions does not exist here, so we add it ourselves-->
+            <xpath>Defs/ThingDef[defName="FilthPrometheum"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="RimScentReworked.ModExtension_Scent">
+                        <thought>RimScent_FuelScent</thought>
+                        <dysosmicTraits>
+                            <li>Pyromaniac</li>
+                        </dysosmicTraits>
+                    </li>
+                </modExtensions>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

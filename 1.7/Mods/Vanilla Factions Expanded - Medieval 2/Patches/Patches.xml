@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PlateHelmetHeavy" or defName="VFEM2_Apparel_HeavyLeatherHelmet"]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PlateHelmetHeavy" or defName="VFEM2_Apparel_HeavyLeatherHelmet"]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>-0.6</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PlateHelmetHeavy" or defName="VFEM2_Apparel_HeavyLeatherHelmet"]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>-0.6</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_LeatherHelmet"]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEM2_Apparel_LeatherHelmet"]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>-0.3</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEM2_Apparel_LeatherHelmet"]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>-0.3</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PlagueMask"]/equippedStatOffsets</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PlagueMask"]/equippedStatOffsets</xpath>
+            <value>
+                <RimScent_SmellSensitivity>0.2</RimScent_SmellSensitivity>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PlagueMask"]</xpath>
+            <value>
+                <equippedStatOffsets>
+                    <RimScent_SmellSensitivity>0.2</RimScent_SmellSensitivity>
+                </equippedStatOffsets>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

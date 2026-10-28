@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[@Name="ApparelArmorHelmetCataphractBase"]/equippedStatOffsets</xpath>
+        <value>
+            <RimScent_SmellSensitivity>-1.0</RimScent_SmellSensitivity>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="AestheticNose"]/stages/li/statOffsets</xpath>
+        <value>
+            <RimScent_SmellSensitivity>1.05</RimScent_SmellSensitivity>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/HediffDef[defName="GastroAnalyzer"]/stages/li/statOffsets</xpath>
+        <value>
+            <RimScent_SmellSensitivity>1.25</RimScent_SmellSensitivity>
+        </value>
+    </Operation>
+
+</Patch>

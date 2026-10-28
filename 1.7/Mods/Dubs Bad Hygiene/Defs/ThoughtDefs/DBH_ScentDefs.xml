@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>RimScent_BadHygiene</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>smelly individual</label>
+                <description>Someone around me smells really bad, they should clean themselves up.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_Feces</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>2</stackLimit>
+        <stages>
+            <li>
+                <label>stench of feces</label>
+                <description>It smells like absolutely disgusting shit here.</description>
+                <baseMoodEffect>-6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>RimScent_Urine</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>2</stackLimit>
+        <stages>
+            <li>
+                <label>stench of urine</label>
+                <description>The unmistakable reeking stench of urine, sour and foul.</description>
+                <baseMoodEffect>-4</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- <ThoughtDef>
+        <defName>RimScent_Biosolids</defName>
+        <durationDays>0.1</durationDays>
+        <stackLimit>4</stackLimit>
+        <stages>
+            <li>
+                <label>stench of biosolids</label>
+                <description>It's unpleasant and stinky, but not enough to puke over.</description>
+                <baseMoodEffect>-3</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef> -->
+
+</Defs>
