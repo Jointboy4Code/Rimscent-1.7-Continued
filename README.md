@@ -1,7 +1,5 @@
 # RimScent Continued — RimWorld 1.7 Public Beta
 
-DRAFT — awaiting review; not published.
-
 RimScent was created by **reo and ocarina0001**. This is a continuation of their work, not a new mod created by Jointboy. Full credit for the original RimScent mod belongs to its original creators.
 
 Original project: https://github.com/ocarina0001/rimscent
