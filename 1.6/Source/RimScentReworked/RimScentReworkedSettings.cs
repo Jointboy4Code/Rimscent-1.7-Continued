@@ -13,7 +13,7 @@ namespace RimScentReworked
         public bool friendlyFactionsCanSmell = false;
         public bool enemyFactionsCanSmell = false;
         public bool homeOnly = false;
-        public bool allowMoodStacking = true;
+        public bool allowMoodStacking = false;
 
         public override void ExposeData()
         {
@@ -26,7 +26,7 @@ namespace RimScentReworked
             Scribe_Values.Look(ref friendlyFactionsCanSmell, "friendlyFactionsCanSmell", false);
             Scribe_Values.Look(ref enemyFactionsCanSmell, "enemyFactionsCanSmell", false);
             Scribe_Values.Look(ref homeOnly, "homeOnly", false);
-            Scribe_Values.Look(ref allowMoodStacking, "allowMoodStacking", true);
+            Scribe_Values.Look(ref allowMoodStacking, "allowMoodStacking", false);
             base.ExposeData();
         }
     }

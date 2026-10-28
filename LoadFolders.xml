@@ -51,5 +51,10 @@
         <li IfModActive="xandrmoro.rim.lovinismessy">1.7/Mods/Lovin Is Messy</li>
         <li IfModActive="vanillaexpanded.vbrewe">1.7/Mods/Vanilla Brewing Expanded</li>
         <li IfModActive="vanillaexpanded.vbrewecandt">1.7/Mods/Coffees and Teas</li>
+        <li IfModActive="vanillaexpanded.vcooke">1.7/Mods/Vanilla Cooking Expanded</li>
+        <li IfModActive="vanillaexpanded.vcookestews">1.7/Mods/Cooking Expanded - Stews</li>
+        <li IfModActive="vanillaexpanded.vcookebakery">1.7/Mods/Cooking Expanded - Bakery</li>
+        <li IfModActive="vanillaexpanded.vcookehaute">1.7/Mods/Cooking Expanded - Haute</li>
+        <li IfModActive="vanillaexpanded.vplantsemore">1.7/Mods/Vanilla Plants Expanded - More Plants</li>
     </v1.7>
 </loadFolders>

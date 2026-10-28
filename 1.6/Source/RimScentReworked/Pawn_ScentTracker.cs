@@ -172,6 +172,7 @@ namespace RimScentReworked
                     ModExtension_Scent thingExt = thing.def.GetModExtension<ModExtension_Scent>();
                     if (thingExt?.thought == null) continue;
                     if (thingExt.onlyFresh && thing.TryGetComp<CompRottable>() is CompRottable rottable && rottable.Stage != RotStage.Fresh) continue;
+                    if (thingExt.onlyMatureHealthyPlant && (thing is not Plant plant || plant.Growth < 0.99f || plant.Blighted || plant.LeaflessNow)) continue;
                     ConsiderScent(thingExt);
                 }
             }
@@ -203,13 +204,17 @@ namespace RimScentReworked
             {
                 ThoughtDef winner = null;
                 float winnerMagnitude = -1f;
+                float winnerMood = float.PositiveInfinity;
                 foreach (var pair in counts)
                 {
                     float magnitude = ThoughtMagnitude(pawn, pair.Key, pair.Value);
-                    if (magnitude > winnerMagnitude)
+                    bool inverted = scentDysosmicStatus.TryGetValue(pair.Key, out bool dysosmic) && dysosmic;
+                    float mood = pair.Key.stages[0].baseMoodEffect * (inverted ? -1f : 1f);
+                    if (magnitude > winnerMagnitude || (magnitude == winnerMagnitude && mood < 0f && winnerMood >= 0f))
                     {
                         winner = pair.Key;
                         winnerMagnitude = magnitude;
+                        winnerMood = mood;
                     }
                 }
                 int count = counts[winner];

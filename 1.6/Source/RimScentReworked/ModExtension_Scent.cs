@@ -8,6 +8,7 @@ namespace RimScentReworked
     {
         public ThoughtDef thought;
         public bool onlyFresh;
+        public bool onlyMatureHealthyPlant;
         public List<string> dysosmicGenes;
         public List<string> dysosmicTraits;
         public List<TraitRequirement> dysosmicTraitDegrees;

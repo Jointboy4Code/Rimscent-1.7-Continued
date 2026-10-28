@@ -5,6 +5,7 @@ static void Check(string name,Func<bool> test) { try { bool ok=test();results.Ad
 static bool Eval(string method, ModExtension_Scent ext, HashSet<string> traits=null,HashSet<string> genes=null,List<Trait> degrees=null)=>(bool)typeof(Pawn_ScentTracker).GetMethod(method,BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,new object[]{traits,genes,ext,degrees});
 static RimScentRuntimeChecks(){
 Check("settings initialized",()=>RimScentReworkedMod.Settings!=null);
+Check("new settings use balanced scent defaults",()=>!new RimScentReworkedSettings().uncappedScents && !new RimScentReworkedSettings().allowMoodStacking);
 Check("human scent tracker attached once",()=>ThingDefOf.Human.comps.Count(c=>c.compClass==typeof(Pawn_ScentTracker))==1);
 Check("smell capacity registered",()=>DefDatabase<PawnCapacityDef>.GetNamedSilentFail("RimScent_Smell")?.workerClass==typeof(PawnCapacityWorker_Smell));
 Check("sensitivity stat registered",()=>DefDatabase<StatDef>.GetNamedSilentFail("RimScent_SmellSensitivity")!=null);

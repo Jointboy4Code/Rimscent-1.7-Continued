@@ -7,7 +7,7 @@
         <li>1.6</li>
         <li>1.7</li>
     </supportedVersions>
-    <description>Continuation of RimScent for RimWorld 1.7. Preserves original save and expansion identifiers. Includes optional Alpha Crafts, Lovin Is Messy, Vanilla Brewing Expanded, and Coffees and Teas scent support. Use instead of the original RimScent.</description>
+    <description>Continuation of RimScent for RimWorld 1.7. Preserves original save and expansion identifiers. Includes optional Alpha Crafts, Lovin Is Messy, brewing and prepared-food integrations. Use instead of the original RimScent.</description>
     <modDependencies>
         <li>
             <packageId>brrainz.harmony</packageId>
@@ -41,5 +41,10 @@
         <li>xandrmoro.rim.lovinismessy</li>
         <li>vanillaexpanded.vbrewe</li>
         <li>vanillaexpanded.vbrewecandt</li>
+        <li>vanillaexpanded.vcooke</li>
+        <li>vanillaexpanded.vcookestews</li>
+        <li>vanillaexpanded.vcookebakery</li>
+        <li>vanillaexpanded.vcookehaute</li>
+        <li>vanillaexpanded.vplantsemore</li>
     </loadAfter>
 </ModMetaData>

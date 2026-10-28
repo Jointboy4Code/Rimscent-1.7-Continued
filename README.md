@@ -1,54 +1,49 @@
-# RimScent - Continued
+# RimScent Continued — RimWorld 1.7 Public Beta
 
-Local continuation of https://github.com/ocarina0001/rimscent under its MIT licence. Original credits and identifiers retained. Branch: `jointboy/1.7-compatibility`. Nothing pushed or published.
+DRAFT — awaiting review; not published.
 
-## Build
+RimScent was created by **reo and ocarina0001**. This is a continuation of their work, not a new mod created by Jointboy. Full credit for the original RimScent mod belongs to its original creators.
 
-`dotnet build Source/RimScent.1.7.csproj -c Release -p:RimWorldDir="C:/Users/dalet/OneDrive/Documents/RimWorld"`
+Original project: https://github.com/ocarina0001/rimscent
+Continuation fork: https://github.com/Jointboy4Code/rimscent
 
-Targets the locally installed RimWorld 1.7.4984 rev1242 (.NET 10), UnityStubs and Harmony 3.0.0-rc.3. Game assemblies are references only, never copied into the mod. The original 1.6 assembly is retained; 1.7 has a separately compiled assembly and versioned definitions.
+This continuation is maintained by Jointboy with full permission from the RimScent 1.6 creator. Original creation credits remain with reo and ocarina0001.
 
-## Compatibility
+Jointboy maintains this continuation's RimWorld 1.7 port, subsequent fixes, additional scent integrations, balance changes and testing.
 
-- Preserves `reo.RimScent`, original assembly/class names, thoughts, traits, genes and settings for save and expansion compatibility. Enable this instead of the original, never both.
-- Retains upstream optional integrations including Dubs Bad Hygiene and shipped Vanilla Expanded patches. Appropriate load-after metadata accompanies optional patch targets.
-- Adds Alpha Crafts: perfume and soap wearer hediffs, and eleven harvested flower/vanilla products, use the original floral scent. Stored perfume bottles and candle stockpiles do not emit scents.
-- Adds Lovin Is Messy: `lim_Filth_LoveJuice` emits a mild -2 stale bodily fluids scent. Existing RimScent sensitivity, traits, radius, line-of-sight and strongest-scent rules apply.
-- New patches guard missing targets and preserve existing scent extensions.
-- Skunks - Continued already applies its own wearer/nearby mood penalties, so no duplicate RimScent penalty is added. DBH Expanded defines no separate filth/odor hediffs requiring new mappings in the inspected source.
-- Other mods can declare `RimScentReworked.ModExtension_Scent` on ThingDefs and HediffDefs; RimScent discovers these after definitions load. Arbitrary item names do not automatically generate smells.
-- Removes dangling RBSE/EPOE load-folder entries from the 1.7 configuration: those directories do not exist upstream. General nose capacity handling remains.
-- Fixes upstream malformed French colour markup and a null-check ordering issue in the pawn tracker.
-- Original perfume/incense expansion binaries are not ported or certified here. Their package dependencies can still find the retained RimScent ID.
+## What this beta adds
 
-## Validation
+A RimWorld 1.7 build preserving the original mod identifiers for save and expansion compatibility, plus optional integrations for:
 
-Release build: zero warnings/errors against the installed 1.7 game. All 98 XML files parse, all 23 versioned 1.7 load folders exist, and all 14 new scent targets and their ThoughtDefs resolve against inspected mod definitions. New patches were checked for idempotence with a representative merged definition document.
+- Alpha Crafts: perfume/soap wearer effects and harvested flowers/vanilla.
+- Lovin Is Messy: a mild bodily-fluid filth scent.
+- Vanilla Brewing Expanded and Coffees and Teas: coffee, tea and mint aromas.
+- Vanilla Cooking Expanded, Stews, Bakery and Haute: a shared mild prepared-food aroma.
+- Vanilla Plants Expanded — More Plants: a shared mild fragrance from nine mature, leafy, unblighted plants.
 
-In-game startup, save loading, XML inheritance/patch ordering and mood behavior still need testing. Existing upstream integrations are retained, not fully runtime-certified. No claim of complete compatibility with every installed mod.
+New food/drink aromas require freshness where applicable. Related dishes and garden flowers share capped effects instead of granting a separate bonus for each variety. Integration support does not imply endorsement by the authors of those mods.
 
-The original Workshop ID is removed to prevent accidental uploads to the original listing. A separate GitHub fork and Workshop release remain unpublished.
+## Balance and fixes
 
-## Headless regression testing (28 October 2026)
+The 1.7 defaults disable uncapped scents and mood stacking. Pawns receive one instance of the dominant scent; source quantity does not multiply either pleasant rewards or unpleasant penalties. Existing explicit saved preferences remain respected, and both settings remain available.
 
-Confirmed native Waylith headless startup with exit code 0. The isolated runtime harness passes 24/24 checks, including settings, human tracker attachment, scent definitions and trait/gene helper behavior. Fixed both trait-degree helpers to test each actual pawn trait using Verse.TraitRequirement.Matches instead of treating a non-null requirement list as a match. Tests cover empty lists, missing traits, wrong degrees, matching degrees and unspecified degrees. This is not a complete pawn-on-map or save/reload certification.
+Fixes address lingering scent memories, sensitivity updates, source-specific immunity, suppressed traits/inactive genes and independent slave eligibility. Equal-strength scent ties favour the scent unpleasant to that pawn.
 
-## Pawn behavior fixes (28 October 2026)
+## Testing and limitations
 
-The focused headless suite now includes 24 startup/helper assertions, 31 pawn/map assertions, and 3 save/reload assertions. Fixed stale smell memories and dominance after removing sources, stale sensitivity/memory age, uncapped-mode cleanup and switching back to capped mode, source-specific anosmia (immunity rather than multiplying mood penalties), the combined keen/dysosmic mood multiplier, overridden genes and suppressed traits, and independent slave/colonist eligibility. Scent effects now synchronize to currently detectable sources at the configured check interval.
+54/54 controlled map checks and 24/24 startup checks passed with a 1,455-package modpack snapshot. Subsequent settings tests passed 26/26 checks for balanced defaults and 26/26 for preservation of explicit saved preferences. Earlier save/reload checks also passed.
 
-Regression harness source is in Tests/Headless. It is test-only and is not installed in normal game mod copies. A native CLR/MonoMod crash occurred during one isolated reload attempt; repeating the same save completed successfully. That runtime-level failure has not been established as a RimScent defect or repaired. Full-pack results are recorded separately from focused-mod results.
+These are controlled functional tests, not a certification of every mod in that pack or long-session stability. Other mod combinations and ordinary extended play need wider beta testing. Original perfume/incense expansion binaries have not been ported or certified here. The retained original 1.6 binary is not the target of this beta's 1.7 testing.
 
-## Full active-pack verification
+Enable this continuation instead of the original RimScent, never both. Back up saves before testing. Bug reports should include the game/mod version, mod list, reproduction steps and relevant log.
 
-The 1,455-package active snapshot passed 61/61 RimScent assertions: 24 startup/helper checks, 34 pawn/map checks (including Alpha Crafts lavender/perfume and Lovin Is Messy filth), and 3 save/reload checks. Both the generated-colony run and the saved-colony reload exited with code 0. All loaded humanlike pawn races had a scent tracker; 70 ThingDefs and 4 HediffDefs declared resolved scent sources.
+## Original credits and licence
 
-This is a controlled scent integration test, not a certification of all installed mods or a long-duration simulation. The pack also logged errors in other mods. One initial full-pack attempt timed out during texture loading; a subsequent attempt completed. An earlier focused reload had a native CLR/MonoMod JIT crash; repeating the same save and then the full-pack reload passed. That native failure's cause has not been established or fixed.
+Original RimScent authors, as credited in the upstream mod metadata: **reo, ocarina0001**.
 
-## Brewing aromas
+The upstream MIT licence retains its original notice:
 
-Added 21 guarded item mappings for Vanilla Brewing Expanded and its Coffees and Teas addon: coffee aroma (+2), tea aroma (+1), and mint aroma (+1). Each aroma stacks once and follows the existing radius, sensitivity, immunity and dominant-scent rules. The mappings cover prepared coffee/tea, coffee beans, tea leaves, and mint leaves; machines, growing plants and iced coffee are not mapped in this batch.
+    Copyright (c) 2026 ocarina0001
 
-The new optional `onlyFresh` scent-extension field prevents these pleasant aromas from rotting/desiccated items that have a CompRottable. It defaults to false for backward compatibility with existing extensions. Both mod package IDs are optional load-after entries in About/About.xml and conditional LoadFolders entries.
+The complete original LICENSE must remain included in distributed source and mod releases. Original attribution is retained; continuation credit does not replace the creators' credit.
 
-Brewing validation: 38/38 pawn-map checks and 24/24 startup/helper checks passed with the 1,455-package snapshot; process exit code 0. New cases cover brewed coffee, masala chai, mint leaves, and removal of aroma from rotting coffee beans. This batch did not repeat the separate save/reload suite.

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VCE_Violet"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="VCE_Violet"]/modExtensions</xpath>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VCE_Violet"]</xpath>
+            <value>
+              <modExtensions />
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="VCE_Violet"]/modExtensions/li[@Class="RimScentReworked.ModExtension_Scent"]</xpath>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VCE_Violet"]/modExtensions</xpath>
+            <value>
+              <li Class="RimScentReworked.ModExtension_Scent">
+                <thought>RimScent_GardenAroma</thought>
+                <onlyMatureHealthyPlant>true</onlyMatureHealthyPlant>
+              </li>
+            </value>
+          </nomatch>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

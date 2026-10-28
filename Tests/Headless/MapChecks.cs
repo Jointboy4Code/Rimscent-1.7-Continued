@@ -44,7 +44,7 @@ public sealed class RimScentMapChecks : GameComponent
         typeof(RimScentReworked.Pawn_ScentTracker).GetMethod("UpdateScent", BindingFlags.Instance | BindingFlags.NonPublic)
             .Invoke(pawn.GetComp<RimScentReworked.Pawn_ScentTracker>(), new object[] { pawn });
     }
-    private List<Thought_Memory> Scents => pawn.needs.mood.thoughts.memories.Memories.Where(m => m.def.defName.StartsWith("RimScent_")).ToList();
+    private List<Thought_Memory> Scents => pawn.needs.mood.thoughts.memories.Memories.Where(m => (m.def.defName.StartsWith("RimScent_") || (m.def.defName.StartsWith("Scent_") && m.def.defName.EndsWith("_Thought")))).ToList();
     private float Mood(string def) => Scents.Where(m => m.def.defName == def).Sum(m => m.MoodOffset());
     private void Trait(string name) => pawn.story.traits.GainTrait(new Trait(DefDatabase<TraitDef>.GetNamed(name)));
     private Thing Source(string name, int x = 1)
@@ -69,6 +69,8 @@ public sealed class RimScentMapChecks : GameComponent
         pawn = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist, Faction.OfPlayer);
         pawn.story.traits.allTraits.Clear();
         foreach (var gene in pawn.genes.GenesListForReading.ToList()) pawn.genes.RemoveGene(gene);
+        // Keep fixtures healthy: generated implants/scars can mutate hediffs during other mods' spawn callbacks.
+        pawn.health.Reset();
         GenSpawn.Spawn(pawn, center, map);
     }
     public override void GameComponentUpdate()
@@ -141,7 +143,7 @@ public sealed class RimScentMapChecks : GameComponent
             if (DefDatabase<ThingDef>.GetNamedSilentFail("AC_Lavender") != null)
             {
                 Check("Alpha Crafts harvested lavender emits floral scent", () => { Reset(); Source("AC_Lavender"); Evaluate(); return Mood("RimScent_FloweryScent") == 2; });
-                Check("Alpha Crafts perfume wearer emits scent to neighbor", () => { Reset(); var other = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist, Faction.OfPlayer); GenSpawn.Spawn(other, center + new IntVec3(1,0,0), map); sources.Add(other); other.health.AddHediff(DefDatabase<HediffDef>.GetNamed("AC_PerfumeHediff")); Evaluate(); return Mood("RimScent_FloweryScent") == 2; });
+                Check("Alpha Crafts perfume wearer emits scent to neighbor", () => { Reset(); var other = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist, Faction.OfPlayer); other.health.Reset(); GenSpawn.Spawn(other, center + new IntVec3(1,0,0), map); sources.Add(other); other.health.AddHediff(DefDatabase<HediffDef>.GetNamed("AC_PerfumeHediff")); Evaluate(); return Mood("RimScent_FloweryScent") == 2; });
             }
             if (DefDatabase<ThingDef>.GetNamedSilentFail("lim_Filth_LoveJuice") != null)
                 Check("Lovin Is Messy filth emits added scent", () => { Reset(); Source("lim_Filth_LoveJuice"); Evaluate(); return pawn.needs.mood.thoughts.memories.Memories.Any(m=>m.def.defName=="RimScentContinued_BodilyFluids" && m.MoodOffset()==-2); });
@@ -153,6 +155,30 @@ public sealed class RimScentMapChecks : GameComponent
                 Check("masala chai emits tea aroma", () => { Reset(); Source("VBE_MasalaChai"); Evaluate(); return Mood("RimScent_TeaAroma")==1; });
             if (DefDatabase<ThingDef>.GetNamedSilentFail("VBE_MintLeaves") != null)
                 Check("mint leaves emit mint aroma", () => { Reset(); Source("VBE_MintLeaves"); Evaluate(); return Mood("RimScent_MintAroma")==1; });
+            if (DefDatabase<ThingDef>.GetNamedSilentFail("VCE_SimpleBake") != null) {
+                Check("prepared bake has mild food aroma", () => { Reset(); Source("VCE_SimpleBake"); Evaluate(); return Mood("RimScent_PreparedFoodAroma")==1; });
+                Check("uncapped mixed food remains one shared bonus", () => { Reset(); var settings=RimScentReworked.RimScentReworkedMod.Settings; settings.uncappedScents=true; settings.allowMoodStacking=true; Source("VCE_SimpleBake"); Source("VCE_SimpleGrill",2); Source("VCE_GourmetBake",3); Evaluate(); return Mood("RimScent_PreparedFoodAroma")==1 && Scents.Count(m=>m.def.defName=="RimScent_PreparedFoodAroma")==1; });
+                Check("rotting bake loses pleasant aroma", () => { Reset(); var food=Source("VCE_SimpleBake"); Evaluate(); bool fresh=Mood("RimScent_PreparedFoodAroma")==1; var rot=food.TryGetComp<CompRottable>(); rot.RotImmediately(); Evaluate(); return fresh && rot.Stage!=RotStage.Fresh && Mood("RimScent_PreparedFoodAroma")==0; });
+                Check("ruined food gains no new pleasant food aroma", () => { Reset(); Source("VCE_RuinedSimpleGrill"); Evaluate(); return Mood("RimScent_PreparedFoodAroma")==0; });
+                Check("equally strong unpleasant odor outranks nearby food", () => { Reset(); Source("VCE_SimpleBake"); Source("Filth_Trash",2); Evaluate(); return Mood("RimScent_TrashScent")==-1 && Mood("RimScent_PreparedFoodAroma")==0; });
+                Check("equal odor tie follows dysosmic pawn aversion", () => { Reset(); Trait("RimScent_Dysosmic"); Source("Filth_Trash"); Source("VCE_SimpleBake",2); Evaluate(); return Mood("RimScent_PreparedFoodAroma")==-1 && Mood("RimScent_TrashScent")==0; });
+                Check("food cannot mask stronger blood smell", () => { Reset(); Source("VCE_SimpleBake"); Source("Filth_Blood",2); Evaluate(); return Mood("RimScent_BloodScent")==-2 && Mood("RimScent_PreparedFoodAroma")==0; });
+            }
+            if (DefDatabase<ThingDef>.GetNamedSilentFail("VCE_CookedStewSimple") != null) {
+                Check("cooked stew emits mild food aroma", () => { Reset(); Source("VCE_CookedStewSimple"); Evaluate(); return Mood("RimScent_PreparedFoodAroma")==1; });
+                Check("uncooked stew gains no new pleasant food aroma", () => { Reset(); Source("VCE_UncookedStewSimple"); Evaluate(); return Mood("RimScent_PreparedFoodAroma")==0; });
+            }
+            if (DefDatabase<ThingDef>.GetNamedSilentFail("VCE_SimpleConfection") != null)
+                Check("bakery confection emits mild food aroma", () => { Reset(); Source("VCE_SimpleConfection"); Evaluate(); return Mood("RimScent_PreparedFoodAroma")==1; });
+            if (DefDatabase<ThingDef>.GetNamedSilentFail("VCE_MealHaute") != null)
+                Check("haute meal has same mild aroma bonus", () => { Reset(); Source("VCE_MealHaute"); Evaluate(); return Mood("RimScent_PreparedFoodAroma")==1; });
+            if (DefDatabase<ThingDef>.GetNamedSilentFail("VCE_Lavender") != null) {
+                Check("young lavender has no garden scent", () => { Reset(); var plant=(Plant)Source("VCE_Lavender"); plant.Growth=0.5f; Evaluate(); return Mood("RimScent_GardenAroma")==0; });
+                Check("mature lavender has mild garden scent", () => { Reset(); var plant=(Plant)Source("VCE_Lavender"); plant.Growth=1f; Evaluate(); return Mood("RimScent_GardenAroma")==1; });
+                Check("blighted flower loses garden scent", () => { Reset(); var plant=(Plant)Source("VCE_Lavender"); plant.Growth=1f; Evaluate(); bool before=Mood("RimScent_GardenAroma")==1; plant.CropBlighted(); Evaluate(); return before && plant.Blighted && Mood("RimScent_GardenAroma")==0; });
+                Check("leafless flower has no garden scent", () => { Reset(); var plant=(Plant)Source("VCE_Lavender"); plant.Growth=1f; bool dies=plant.def.plant.dieIfLeafless; try { plant.def.plant.dieIfLeafless=false; plant.MakeLeafless(Plant.LeaflessCause.Cold,false); Evaluate(); return !plant.Destroyed && plant.LeaflessNow && Mood("RimScent_GardenAroma")==0; } finally { plant.def.plant.dieIfLeafless=dies; } });
+                Check("mixed garden remains one bonus with stacking enabled", () => { Reset(); RimScentReworked.RimScentReworkedMod.Settings.uncappedScents=true; RimScentReworked.RimScentReworkedMod.Settings.allowMoodStacking=true; ((Plant)Source("VCE_Lavender")).Growth=1f; ((Plant)Source("VCE_Jasmine",2)).Growth=1f; ((Plant)Source("VCE_FragrantbloomRose",3)).Growth=1f; Evaluate(); return Mood("RimScent_GardenAroma")==1 && Scents.Count(m=>m.def.defName=="RimScent_GardenAroma")==1; });
+            }
             Reset(); Source("Filth_Blood"); Evaluate();
             savedPawnId = pawn.thingIDNumber;
             reloadVerification = true;
