@@ -29,9 +29,7 @@ Fixes address lingering scent memories, sensitivity updates, source-specific imm
 
 ## Testing and limitations
 
-54/54 controlled map checks and 24/24 startup checks passed with a 1,455-package modpack snapshot. Subsequent settings tests passed 26/26 checks for balanced defaults and 26/26 for preservation of explicit saved preferences. Earlier save/reload checks also passed.
-
-These are controlled functional tests, not a certification of every mod in that pack or long-session stability. Other mod combinations and ordinary extended play need wider beta testing. Original perfume/incense expansion binaries have not been ported or certified here. The retained original 1.6 binary is not the target of this beta's 1.7 testing.
+Original perfume/incense expansion binaries have not been ported or certified here. The retained original 1.6 binary is not the target of this beta's 1.7 testing.
 
 Enable this continuation instead of the original RimScent, never both. Back up saves before testing. Bug reports should include the game/mod version, mod list, reproduction steps and relevant log.
 
@@ -42,6 +40,4 @@ Original RimScent authors, as credited in the upstream mod metadata: **reo, ocar
 The upstream MIT licence retains its original notice:
 
     Copyright (c) 2026 ocarina0001
-
-The complete original LICENSE must remain included in distributed source and mod releases. Original attribution is retained; continuation credit does not replace the creators' credit.
 
