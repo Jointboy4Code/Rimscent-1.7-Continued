@@ -33,11 +33,5 @@ Original perfume/incense expansion binaries have not been ported or certified he
 
 Enable this continuation instead of the original RimScent, never both. Back up saves before testing. Bug reports should include the game/mod version, mod list, reproduction steps and relevant log.
 
-## Original credits and licence
 
-Original RimScent authors, as credited in the upstream mod metadata: **reo, ocarina0001**.
-
-The upstream MIT licence retains its original notice:
-
-    Copyright (c) 2026 ocarina0001
 
